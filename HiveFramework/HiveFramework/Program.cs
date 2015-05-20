@@ -39,7 +39,7 @@ namespace HiveFramework
                 }
             }
             cMgr.pString("core", "Starting up...");
-            if(/* find settings file */ false != true)
+            if(System.IO.File.Exists(@"C:\hiveframework\settings.txt") != true)
             {
                 if(settings_silent)
                 {
