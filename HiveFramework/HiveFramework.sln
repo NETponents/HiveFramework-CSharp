@@ -5,6 +5,11 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiveFramework", "HiveFramework\HiveFramework.csproj", "{B685B67D-2266-438E-BBE9-65F6811E9297}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{448A7A18-FD60-4D9D-998C-A07EA235BD25}"
+	ProjectSection(SolutionItems) = preProject
+		..\samples\sample1.asm = ..\samples\sample1.asm
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

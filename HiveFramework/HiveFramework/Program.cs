@@ -50,9 +50,34 @@ namespace HiveFramework
                 {
                     Setup(ref settings_hostname);
                 }
-                Console.ReadLine();
-                return;
             }
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+            #region shellloop
+            while(true)
+            {
+                string cmd = "";
+                Console.Write("console@" + settings_hostname + ": ");
+                cmd = Console.ReadLine();
+                if(cmd == "exit")
+                {
+                    break;
+                }
+                else if(cmd == "clear")
+                {
+                    Console.Clear();
+                }
+                else if(cmd.Split(' ')[0] == "start")
+                {
+                    // Start running the script
+                }
+            }
+            #endregion
+            Console.WriteLine("Press enter to quit...");
+            Console.ReadLine();
+            return;
         }
         static void Setup(ref string hname)
         {
