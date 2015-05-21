@@ -7,7 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiveFramework", "HiveFramew
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{448A7A18-FD60-4D9D-998C-A07EA235BD25}"
 	ProjectSection(SolutionItems) = preProject
-		..\samples\sample1.asm = ..\samples\sample1.asm
+		..\samples\sample1\sample1.asm = ..\samples\sample1\sample1.asm
+		..\samples\sample1\sample1.hv = ..\samples\sample1\sample1.hv
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{0B220989-5921-4A5F-80ED-D6042443D30B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample1", "sample1", "{BB284F1E-D158-4A7F-B0E6-28C0C82291D4}"
+	ProjectSection(SolutionItems) = preProject
+		..\samples\sample1\sample1.asm = ..\samples\sample1\sample1.asm
+		..\samples\sample1\sample1.hv = ..\samples\sample1\sample1.hv
 	EndProjectSection
 EndProject
 Global
@@ -23,5 +32,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB284F1E-D158-4A7F-B0E6-28C0C82291D4} = {0B220989-5921-4A5F-80ED-D6042443D30B}
 	EndGlobalSection
 EndGlobal

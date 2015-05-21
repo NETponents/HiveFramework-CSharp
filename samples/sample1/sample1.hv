@@ -1,0 +1,29 @@
+# hive 0.0.0.1
+# type hive
+# vroot sample1
+# start main
+
+job main
+	var var1
+	var var2
+	var var3
+	hvar var4
+	set var2 n
+	set var4 1
+	add 5 5 var1
+	print $var1
+	if $var2 is y
+		start job2 var3
+		wait $var3
+		print @var4
+	endif
+	print Stopping program
+exit
+
+job job2
+	lbl a
+	add @var4 1 var4
+	if @var4 less 20
+		goto a
+	endif
+exit

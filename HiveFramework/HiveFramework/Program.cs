@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace HiveFramework
 {
@@ -13,6 +14,7 @@ namespace HiveFramework
             string temp_hive_vnum = "0.0.0.1";
             string settings_startscript = "";
             string settings_hostname = "";
+            string settings_cuser = "";
             bool settings_silent = false;
 
             Console.WriteLine("HIVE Framework copyright 2015 NETponents software");
@@ -39,16 +41,17 @@ namespace HiveFramework
                 }
             }
             cMgr.pString("core", "Starting up...");
-            if(System.IO.File.Exists(@"C:\hiveframework\settings.txt") != true)
+            if(File.Exists(@"C:\hiveframework\settings.txt") != true)
             {
                 if(settings_silent)
                 {
                     cMgr.pString("core", "Silent mode is on, using default parameters");
                     settings_hostname = "H1N001";
+                    settings_cuser = "local";
                 }
                 else
                 {
-                    Setup(ref settings_hostname);
+                    Setup(ref settings_hostname, ref settings_cuser);
                 }
             }
             Console.Clear();
@@ -59,9 +62,13 @@ namespace HiveFramework
             while(true)
             {
                 string cmd = "";
-                Console.Write("console@" + settings_hostname + ": ");
+                Console.Write(settings_cuser + "@" + settings_hostname + ": ");
                 cmd = Console.ReadLine();
                 if(cmd == "exit")
+                {
+                    break;
+                }
+                else if(cmd == "quit")
                 {
                     break;
                 }
@@ -79,7 +86,7 @@ namespace HiveFramework
             Console.ReadLine();
             return;
         }
-        static void Setup(ref string hname)
+        static void Setup(ref string hname, ref string usr)
         {
             Console.ResetColor();
             Console.BackgroundColor = ConsoleColor.Blue;
@@ -87,6 +94,8 @@ namespace HiveFramework
             Console.Clear();
             Console.Write("Enter a unique name for this node: ");
             hname = Console.ReadLine();
+            Console.Write("Enter your username: ");
+            usr = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("License");
             Console.WriteLine("========");
